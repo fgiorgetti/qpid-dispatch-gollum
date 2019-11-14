@@ -22,6 +22,9 @@ import (
 // The uniqueId is used to help composing the generated JUnit file name (when --report-dir
 // is specified when running your tests).
 func Initialize(t *testing.T, uniqueId string, description string) {
+	framework.HandleFlags()
+	gomega.RegisterFailHandler(ginkgowrapper.Fail)
+
 	// If any ginkgoReporter has been defined, use them.
 	if framework.TestContext.ReportDir != "" {
 		ginkgo.RunSpecsWithDefaultAndCustomReporters(t, description, generateReporter(uniqueId))
@@ -31,10 +34,10 @@ func Initialize(t *testing.T, uniqueId string, description string) {
 }
 
 // Initialize Ginkgo and parse command line arguments
-func init() {
-	framework.HandleFlags()
-	gomega.RegisterFailHandler(ginkgowrapper.Fail)
-}
+//func init() {
+//	framework.HandleFlags()
+//	gomega.RegisterFailHandler(ginkgowrapper.Fail)
+//}
 
 // generateReporter returns a slice of ginkgo.Reporter if reportDir has been provided
 func generateReporter(uniqueId string) []ginkgo.Reporter {

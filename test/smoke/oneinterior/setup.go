@@ -1,6 +1,7 @@
 package oneinterior
 
 import (
+	"github.com/rh-messaging/shipshape/pkg/apps/qdrouterd/deployment"
 	"github.com/rh-messaging/shipshape/pkg/framework"
 	"github.com/interconnectedcloud/qdr-operator/pkg/apis/interconnectedcloud/v1alpha1"
 	"github.com/onsi/ginkgo"
@@ -42,7 +43,7 @@ var _ = ginkgo.JustBeforeEach(func() {
 	}
 
 	// After operator deployed and before running tests
-	_, err := ctx.CreateInterconnectFromSpec(1, DeployName, *IcSpec)
+	_, err := deployment.CreateInterconnectFromSpec(*ctx, 1, DeployName, *IcSpec)
 	gomega.Expect(err).To(gomega.BeNil())
 
 	// Verify deployment worked

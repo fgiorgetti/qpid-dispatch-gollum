@@ -1,6 +1,7 @@
 package twointerior
 
 import (
+	"github.com/rh-messaging/shipshape/pkg/apps/qdrouterd/deployment"
 	"github.com/rh-messaging/shipshape/pkg/framework"
 	"github.com/interconnectedcloud/qdr-operator/pkg/apis/interconnectedcloud/v1alpha1"
 	"github.com/onsi/ginkgo"
@@ -69,7 +70,7 @@ var _ = ginkgo.JustBeforeEach(func() {
 	}
 
 	// Creating QdrOneSpec
-	ic, err := ctxOne.CreateInterconnectFromSpec(1, QdrOneName, *QdrOneSpec)
+	ic, err := deployment.CreateInterconnectFromSpec(*ctxOne, 1, QdrOneName, *QdrOneSpec)
 	gomega.Expect(err).To(gomega.BeNil())
 	gomega.Expect(ic).NotTo(gomega.BeNil())
 
@@ -78,7 +79,7 @@ var _ = ginkgo.JustBeforeEach(func() {
 	gomega.Expect(err).To(gomega.BeNil())
 
 	// Creating QdrTwoSpec
-	ic, err = ctxTwo.CreateInterconnectFromSpec(1, QdrTwoName, *QdrTwoSpec)
+	ic, err = deployment.CreateInterconnectFromSpec(*ctxTwo, 1, QdrTwoName, *QdrTwoSpec)
 	gomega.Expect(err).To(gomega.BeNil())
 	gomega.Expect(ic).NotTo(gomega.BeNil())
 
