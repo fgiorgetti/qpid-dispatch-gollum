@@ -311,7 +311,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:6b8af86896d86cd8018c33214477b2f3940cdd977b67805e59f6ea99c3435a7f"
+  digest = "1:260026a53e8c6a7d11e2a453005329db953b4568f09b042f88f4f1d512062c64"
   name = "github.com/rh-messaging/shipshape"
   packages = [
     "pkg/api/client/amqp",
@@ -327,7 +327,7 @@
     "pkg/validation/qpiddispatch/management",
   ]
   pruneopts = "UT"
-  revision = "e79e43ff3dffda3ba9dcfa0b5681adb50e7e503a"
+  revision = "3a267e773178abbd8203c26821b9158c498bcece"
 
 [[projects]]
   digest = "1:9424f440bba8f7508b69414634aef3b2b3a877e522d8a4624692412805407bb7"
