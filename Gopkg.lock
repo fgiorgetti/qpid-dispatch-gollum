@@ -310,6 +310,14 @@
   version = "v3.0.0"
 
 [[projects]]
+  digest = "1:cf31692c14422fa27c83a05292eb5cbe0fb2775972e8f1f8446a71549bd8980b"
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "ba968bfe8b2f7e042a574c888954fccecfa385b4"
+  version = "v0.8.1"
+
+[[projects]]
   branch = "master"
   digest = "1:260026a53e8c6a7d11e2a453005329db953b4568f09b042f88f4f1d512062c64"
   name = "github.com/rh-messaging/shipshape"
@@ -737,6 +745,17 @@
   revision = "6ca3b61696b65b0e81f1a39b4937fc2d2994ed6a"
 
 [[projects]]
+  digest = "1:37ebeb852da73c6aa38bb9ea04466c69f874762a1efc792b2d7feb58482a6c88"
+  name = "pack.ag/amqp"
+  packages = [
+    ".",
+    "internal/testconn",
+  ]
+  pruneopts = "UT"
+  revision = "0dbbfb4a59589f463febebe9d3f0275b7451604a"
+  version = "v0.12.4"
+
+[[projects]]
   digest = "1:9b89872389bed1e6647547b868c3f9fa813f8adf098ba0984bc672e4b78ae235"
   name = "sigs.k8s.io/controller-runtime"
   packages = [
@@ -772,6 +791,7 @@
     "k8s.io/code-generator/cmd/openapi-gen",
     "k8s.io/gengo/args",
     "k8s.io/klog",
+    "pack.ag/amqp",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
