@@ -24,7 +24,7 @@ var (
 // Create the Framework instance to be used oneinterior tests
 var _ = ginkgo.BeforeEach(func() {
 	// Setup the topology
-	Framework = framework.NewFramework("one-interior", framework.TestContext.GetContexts()[0])
+	Framework = framework.NewFrameworkBuilder("one-interior").Build()
 }, 60)
 
 // Deploy Interconnect

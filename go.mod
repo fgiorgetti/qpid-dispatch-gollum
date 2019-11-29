@@ -32,13 +32,12 @@ require (
 	github.com/openshift/client-go v3.9.0+incompatible
 	github.com/pborman/uuid v0.0.0-20180906182336-adf5a7427709
 	github.com/petar/GoLLRB v0.0.0-20190514000832-33fb24c13b99
-	github.com/peterbourgon/diskv v2.0.1+incompatible // indirect
 	github.com/pkg/errors v0.8.1
-	github.com/rh-messaging/shipshape v0.0.0-20191121143212-3a267e773178
+	github.com/rh-messaging/shipshape v0.0.0-20191129163736-5676d586b846
 	github.com/spf13/pflag v1.0.1
 	golang.org/x/crypto v0.0.0-20190611184440-5c40567a22f8
-	golang.org/x/net v0.0.0-20191004110552-13f9640d40b9
-	golang.org/x/oauth2 v0.0.0-20170412232759-a6bd8cefa181
+	golang.org/x/net v0.0.0-20191109021931-daa7c04131f5
+	golang.org/x/oauth2 v0.0.0-20190402181905-9f3314589c9a
 	golang.org/x/sys v0.0.0-20191113165036-4c7a9d0fe056
 	golang.org/x/text v0.3.2
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0

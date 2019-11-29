@@ -30,8 +30,8 @@ const (
 var _ = ginkgo.BeforeEach(func() {
 
 	// Creating two distinct frameworks for same cluster/context
-	FrameworkQdrOne = framework.NewFramework("two-interior", framework.TestContext.GetContexts()[0])
-	FrameworkQdrTwo = framework.NewFramework("two-interior", framework.TestContext.GetContexts()[0])
+	FrameworkQdrOne = framework.NewFrameworkBuilder("two-interior").Build()
+	FrameworkQdrTwo = framework.NewFrameworkBuilder("two-interior").Build()
 
 })
 
