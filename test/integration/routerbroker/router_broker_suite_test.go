@@ -5,7 +5,11 @@ import (
 	"testing"
 )
 
+func TestMain(m *testing.M) {
+	test.CommonMainFunc(m)
+}
+
 // Just to illustrate the structure for this test suite
 func TestRouterBroker(t *testing.T) {
-	test.Initialize(t, "routerbroker","RouterBroker Suite")
+	test.RunSpecs(t, "routerbroker","RouterBroker Suite")
 }

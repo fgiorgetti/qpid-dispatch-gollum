@@ -5,6 +5,10 @@ import (
 	"testing"
 )
 
+func TestMain(m *testing.M) {
+	test.CommonMainFunc(m)
+}
+
 func TestOneInterior(t *testing.T) {
-	test.Initialize(t, "oneinterior", "OneInterior Suite")
+	test.RunSpecs(t, "oneinterior", "OneInterior Suite")
 }

@@ -15,16 +15,18 @@ import (
 )
 
 
-// Initialize once this file is imported, the "init()" method will be called automatically
-// by Ginkgo and so, within your test suites you have to explicitly invoke this method
-// as it will run your specs and setup the appropriate reporters (if any requested).
-// This method MUST be called (otherwise the init() might not be executed).
-// The uniqueId is used to help composing the generated JUnit file name (when --report-dir
-// is specified when running your tests).
-func Initialize(t *testing.T, uniqueId string, description string) {
+// CommonMainFunc must be called by each test suite in order to parse
+// command line arguments.
+func CommonMainFunc(m *testing.M) {
 	framework.HandleFlags()
 	gomega.RegisterFailHandler(ginkgowrapper.Fail)
+	os.Exit(m.Run())
+}
 
+// RunSpecs will use Ginkgo to run your test specs, and eventually setup
+// report dir accordingly. The uniqueId is used to help composing the generated
+// JUnit file name (when --report-dir is specified when running your tests).
+func RunSpecs(t *testing.T, uniqueId string, description string) {
 	// If any ginkgoReporter has been defined, use them.
 	if framework.TestContext.ReportDir != "" {
 		ginkgo.RunSpecsWithDefaultAndCustomReporters(t, description, generateReporter(uniqueId))
@@ -32,12 +34,6 @@ func Initialize(t *testing.T, uniqueId string, description string) {
 		ginkgo.RunSpecs(t, description)
 	}
 }
-
-// Initialize Ginkgo and parse command line arguments
-//func init() {
-//	framework.HandleFlags()
-//	gomega.RegisterFailHandler(ginkgowrapper.Fail)
-//}
 
 // generateReporter returns a slice of ginkgo.Reporter if reportDir has been provided
 func generateReporter(uniqueId string) []ginkgo.Reporter {
